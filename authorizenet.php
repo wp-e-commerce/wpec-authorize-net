@@ -23,7 +23,7 @@ if ( ! defined( 'WPEC_ANET_VERSION' ) ) {
 	define( 'WPEC_ANET_VERSION', '1.0.0' );
 }
 if ( ! defined( 'WPEC_ANET_PRODUCT_ID' ) ) {
-	define( 'WPEC_ANET_PRODUCT_ID', '' );
+	define( 'WPEC_ANET_PRODUCT_ID', 481745 );
 }
 
 function wpec_authnet_register_file() {
