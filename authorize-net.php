@@ -37,15 +37,15 @@ class WPSC_Payment_Gateway_Authorize_Net extends WPSC_Payment_Gateway {
 	public function __construct() {
 		parent::__construct();
 
-		$this->title 			= __( 'Authorize.net', 'wpsc_authorize_net' );
-		$this->supports 		= array( 'default_credit_card_form', 'tev1' );
-		$this->sandbox			= $this->setting->get( 'sandbox' ) == '1' ? true : false;
-		$this->endpoint			= $this->sandbox ? $this->endpoints['sandbox'] : $this->endpoints['production'];
+		$this->title            = __( 'Authorize.net', 'wpsc_authorize_net' );
+		$this->supports         = array( 'default_credit_card_form', 'tev1' );
+		$this->sandbox          = $this->setting->get( 'sandbox' ) == '1' ? true : false;
+		$this->endpoint         = $this->sandbox ? $this->endpoints['sandbox'] : $this->endpoints['production'];
 		$this->wdsl_url         = 'https://api2.authorize.net/soap/v1/Service.asmx?WSDL';
 
 		// Define user set variables
-		$this->api_id			= $this->setting->get( 'api_id' );
-		$this->trans_key   		= $this->setting->get( 'trans_key' );
+		$this->api_id           = $this->setting->get( 'api_id' );
+		$this->trans_key        = $this->setting->get( 'trans_key' );
 	}
 
 	public function init() {
@@ -54,7 +54,7 @@ class WPSC_Payment_Gateway_Authorize_Net extends WPSC_Payment_Gateway {
 
 	public function process() {
 		$name_value_pairs = array();
-		$order          = $this->purchase_log;
+		$order            = $this->purchase_log;
 
 		require_once( dirname( __FILE__ ) . '/includes/anet_php_sdk/AuthorizeNet.php' );
 
